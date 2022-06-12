@@ -1,0 +1,65 @@
+.app-register{
+position: absolute;
+top:80px;
+width:100%;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 600px;
+}
+.app-register h2{
+font-size: 30px;
+}
+.app-register h2,p,label,input{
+color:rgb(250, 112, 0);
+margin-top: 10px;
+}
+
+.app-register button{
+padding:5px 10px;
+color:rgb(250, 112, 0);
+border-radius: 5px;
+outline: none;
+border: 1px solid rgb(250, 112, 0);
+margin-top: 10px;
+}
+
+.app-register button:hover{
+background-color:rgb(250, 112, 0);
+color:white;
+}
+
+.register-left{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+margin-right: 200px;
+width:500px;
+}
+.register-form{
+display: flex;
+flex-direction: column;
+width:60%;
+justify-content: flex-start;
+align-items: center;
+}
+
+.register-input{
+display: flex;
+justify-content:  flex-start;
+align-items: center;
+margin-bottom: 20px;
+width:90%;
+}
+
+.register-input label{
+width:30%;
+}
+
+.register-input input{
+width:50%;
+border: none;
+outline: none; 
+border-bottom: 1px solid grey;
+}

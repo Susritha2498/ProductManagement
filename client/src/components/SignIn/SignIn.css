@@ -1,0 +1,66 @@
+.app-signin{
+position: absolute;
+top:80px;
+width:100%;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 600px;
+}
+.app-signin h2{
+font-size: 30px;
+}
+.app-signin h2,p,label,input{
+color:rgb(250, 112, 0);
+margin-top: 10px;
+}
+
+.app-signin button{
+padding:5px 10px;
+color:rgb(250, 112, 0);
+border-radius: 5px;
+outline: none;
+border: 1px solid rgb(250, 112, 0);
+margin-top: 10px;
+}
+
+.app-signin button:hover{
+background-color:rgb(250, 112, 0);
+color:white;
+}
+
+
+.signin-left{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+margin-right: 200px;
+width:500px;
+}
+.signin-form{
+display: flex;
+flex-direction: column;
+width:60%;
+justify-content: flex-start;
+align-items: center;
+}
+
+.signin-input{
+display: flex;
+justify-content:  center;
+align-items: center;
+margin-bottom: 20px;
+width:90%;
+}
+
+.signin-input label{
+width:10%;
+}
+
+.signin-input input{
+width:50%;
+border: none;
+outline: none; 
+border-bottom: 1px solid grey;
+}

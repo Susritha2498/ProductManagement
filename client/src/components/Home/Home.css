@@ -1,0 +1,121 @@
+.app-home{
+display:flex;
+flex-direction:column;
+width:100%;
+min-height: 900px;
+}
+
+.app-new-dresses{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width:100%;
+height:500px;
+color:white;
+background-image: url('/public/images/dressbg1.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+margin-top: 80px;
+}
+
+.app-dress-tag{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+opacity: 1;
+box-shadow: 0 0 6px grey;
+border-radius: 5px;
+padding:10px;
+background-color: rgba(168, 89, 139, 0.731);
+}
+
+
+.app-new-denims{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width:100%;
+height:500px;
+color:white;
+opacity: 0.95;
+background-image: url('/public/images/denimbg.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.app-denim-tag{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+opacity: 1;
+box-shadow: 0 0 6px grey;
+border-radius: 5px;
+padding:10px;
+background-color: rgba(66, 134, 237, 0.833);
+}
+
+.app-new-sarees{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width:100%;
+height:500px;
+color:white;
+opacity: 0.95;
+background-image: url('/public/images/ethnic.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.app-saree-tag{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+opacity: 1;
+box-shadow: 0 0 6px grey;
+border-radius: 5px;
+padding:10px;
+background-color: rgba(93, 187, 198, 0.546);
+}
+
+
+.app-new-dresses2{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width:100%;
+height:500px;
+color:white;
+opacity: 0.95;
+background-image: url('/public/images/dressbg2.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.app-dress2-tag{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+opacity: 1;
+box-shadow: 0 0 6px grey;
+border-radius: 5px;
+padding:10px;
+background-color: rgba(222, 99, 93, 0.763);
+}
+    
+
+.app-home button{
+padding:5px 10px;
+background-color: black;
+color: white;
+font-weight: bolder;
+font-size:large;
+}

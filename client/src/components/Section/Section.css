@@ -1,0 +1,103 @@
+.app-section{
+width:100%;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 900px;
+}
+
+.app-section-products{
+display:flex;
+flex-direction: row;
+justify-content:space-evenly;
+align-items:center;
+flex-wrap:wrap;
+width:100%;
+column-gap:5px;
+margin-top: 80px;
+margin-left: 50px;
+color:rgb(250, 112, 0);
+}
+.section-add-product{
+margin:5px 40px 5px 5px;
+display:flex;
+justify-content:space-between;
+align-items: center;
+width:100%;
+}
+
+.section-add-product button{
+padding:5px 10px;
+color:rgb(250, 112, 0);
+border-radius: 5px;
+outline: none;
+border: 1px solid rgb(250, 112, 0);
+margin-top: 10px;
+}
+.section-add-product button:hover{
+background-color:rgb(250, 112, 0);
+color:white;
+}
+.products-image{
+display: flex;
+flex-direction: column;
+}
+.products-image h3{
+margin-top: 5px;
+padding:0;
+}
+
+.products-image img{
+margin-top: 5px;
+padding:0;
+border-radius: 20px;
+}
+
+.products-image{
+text-decoration: none;
+width:280px;
+height:350px;
+}
+.products-image img{
+width:250px;
+height:250px;
+}
+
+
+.app-section-products h3,p{
+margin:0;
+padding:0;
+}
+
+.app-section-products .span1{
+font-weight:bold;
+position:relative;
+top:-80px;
+left:10px;
+border: 1px solid white;
+background-color:white;
+opacity: 0.6;
+width:200px;
+}
+
+
+.app-section-products .span2{
+position: relative;
+top:-320px;
+right:-190px;
+border: 1px solid white;
+background-color:white;
+opacity: 0.6;
+width:50px;
+}
+/* .edit-icon{
+position: relative;
+top:-300px;
+right:-140px;
+}
+
+.delete-icon{
+position: relative;
+top:-320px;
+right:-170px;
+} */

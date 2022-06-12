@@ -1,0 +1,31 @@
+.app-navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background-color: rgb(244, 175, 64);
+color:white;
+height:80px;
+width:100%;
+padding:0 10px;
+position: fixed;
+z-index: 100;
+opacity: 0.9;
+}
+
+.app-navlinks{
+width:40%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+.app-navlinks h1{
+font-size: x-large;
+font-family: jokerman;
+border: 2px solid white;
+padding:5px;
+text-transform: uppercase;
+}
+.app-navlinks a{
+text-decoration: none;
+color:white;
+}
