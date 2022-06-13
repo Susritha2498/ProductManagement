@@ -5,7 +5,6 @@ import SignUp from './components/SignUp/SignUp';
 import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar'
 import Section from './components/Section/Section'
-import ProductDetails from './components/ProductDetails/ProductDetails'
 import Footer from './components/Footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
@@ -19,7 +18,6 @@ function App() {
           <Route path="/register" element={<SignUp/>} />
           <Route path="/home" element={<Home/>}/>
           <Route path="/products" element={<Section/>}/>
-          <Route path="/product/slug" element={<ProductDetails/>}/>
         </Routes>
       </BrowserRouter>
       <Footer/>

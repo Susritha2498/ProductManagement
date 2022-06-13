@@ -2,8 +2,7 @@ import React from 'react'
 import './EditProduct.css'
 import { useNavigate } from 'react-router-dom'
 import {BsX} from 'react-icons/bs'
-const EditProduct = ({product,id,edit,setEdit}) => {
-  const gotoProducts = useNavigate()
+const EditProduct = ({product,id,edit,setEdit,getProducts}) => {
   const handleClose=()=>{
     setEdit(!edit)
   }
@@ -24,14 +23,14 @@ const EditProduct = ({product,id,edit,setEdit}) => {
         Authorization: token,
       },
       body:JSON.stringify({
-       id,title,tagline,rating,totalRatings,price,productImage
+       userId:id,title,tagline,rating,totalRatings,price,productImage
       })
     })
     const response = await resp.json()
-    console.log(response);
     if(response.Code===200){
       alert(response.Message)
-      gotoProducts('/products')
+      setEdit(!edit)
+      getProducts()
     }
     else{
       alert(response.Message)

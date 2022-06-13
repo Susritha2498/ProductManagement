@@ -2,8 +2,8 @@ import React from 'react'
 import './AddProduct.css'
 import { useNavigate } from 'react-router-dom'
 import {BsX} from 'react-icons/bs'
-const AddProduct = ({add,setAdd}) => {
-  const gotoProducts = useNavigate()
+const AddProduct = ({add,setAdd,getProducts}) => {
+  const gohome = useNavigate()
   const handleClose=()=>{
     setAdd(!add)
   }
@@ -30,7 +30,11 @@ const AddProduct = ({add,setAdd}) => {
     const response = await resp.json()
     if(response.Code===200){
       alert(response.Message)
-      gotoProducts('/products')
+      setAdd(!add)
+      getProducts()
+    }else if(response.Code===404){
+      alert(response.Message)
+      gohome('/')
     }
     else{
       alert(response.Message)

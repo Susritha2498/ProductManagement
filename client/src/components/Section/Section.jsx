@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Sidebar from '../Sidebar/Sidebar'
 import Product from '../Product/Product'
 import AddProduct from '../AddProduct/AddProduct'
@@ -12,9 +12,8 @@ const Section = () => {
 	}
 	const gotoproducts  = useNavigate()
 	const [products, setProducts] = useState([])
-  
-	useEffect(() => {
-		async function getProducts(){
+
+	async function getProducts(){
 		let username = localStorage.key(0)
 		let token = localStorage.getItem(username)
 		const resp=await fetch('http://localhost:5000/allproducts',{
@@ -25,18 +24,18 @@ const Section = () => {
 			},
 		})		
 		const response = await resp.json()
-		// console.log(response.Response)
 		if(response.Code===200){
-		// alert("Successfully fetched the products")
-		gotoproducts('/products')
 		setProducts(response.Response)
+		gotoproducts('/products')
+
 		}
 		else{
-		alert("Failed to fetch the products")
+		alert("Failed to fetch the products")		
 		} 
 	}
-	getProducts()
 
+	useEffect(() => {
+	getProducts()
 	}, [])
 
   return (
@@ -50,12 +49,12 @@ const Section = () => {
       {products.map((item,idx)=>{
         let product = item
           return(
-			<Product key={`products-${idx}`} product={item} id={product._id}/>	
+			<Product key={`products-${idx}`} product={item} id={product._id} getProducts={getProducts}/>	
           )
         })}
       </div>  
 	  <div style={add?{opacity:1}:{display:"none"}}>
-		<AddProduct add={add} setAdd={setAdd}/>
+		<AddProduct add={add} setAdd={setAdd} getProducts={getProducts}/>
 	  </div>
     </div>
   )

@@ -3,8 +3,7 @@ import EditProduct from '../EditProduct/EditProduct'
 import {RiDeleteBin5Line,RiEditBoxLine} from 'react-icons/ri'
 import { useNavigate } from 'react-router-dom'
 
-const Product = ({product,id}) => {
-  const gotoProducts = useNavigate()
+const Product = ({product,id,getProducts}) => {
     const [edit,setEdit] = useState(false)
     const handleEdit=()=>{
       setEdit(true)
@@ -24,7 +23,7 @@ const Product = ({product,id}) => {
     console.log(response);
     if(response.Code===200){
       alert(response.Message)
-      gotoProducts('/products')
+      getProducts()
     }
     else{
       alert(response.Message)
@@ -43,7 +42,7 @@ const Product = ({product,id}) => {
         </span>
     </div>
       <div style={edit?{opacity:'1'}:{display:'none'}} className="edit-form">
-        <EditProduct id={product.id} product={product} edit={edit} setEdit={setEdit}/>
+        <EditProduct id={id} product={product} edit={edit} setEdit={setEdit} getProducts={getProducts}/>
       </div> 
     </>
   )
