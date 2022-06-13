@@ -116,8 +116,8 @@ func AddOneProduct(w http.ResponseWriter, r *http.Request) {
 
 	email, _ := VerifyToken(Token)
 	if email == "" {
-		errorResponse.Code = http.StatusUnauthorized
-		errorResponse.Message = "Do not have authorization"
+		errorResponse.Code = http.StatusNotFound
+		errorResponse.Message = "Please login first"
 		returnErrorResponse(w, r, errorResponse)
 		return
 	} else {
@@ -182,12 +182,10 @@ func EditOneProduct(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(decoderErr)
 		// returnErrorResponse(w, r, errorResponse)
 	}
-
 	var result model.Users
 
 	Token := r.Header.Get("Authorization")
 	email, _ := VerifyToken(Token)
-	fmt.Println(email)
 	if email == "" {
 		errorResponse.Code = http.StatusNotFound
 		errorResponse.Message = "Please login first"
@@ -213,7 +211,7 @@ func EditOneProduct(w http.ResponseWriter, r *http.Request) {
 				returnErrorResponse(w, r, errorResponse)
 				return
 			}
-			filter := bson.M{"_id": id, "email": email}
+			filter := bson.M{"_id": id, "userId": result.ID}
 			update := bson.M{"$set": bson.M{
 				"title":        item.Title,
 				"tagline":      item.Tagline,
@@ -223,8 +221,6 @@ func EditOneProduct(w http.ResponseWriter, r *http.Request) {
 				"productImage": item.ProductImage}}
 
 			updated, dberr := database.Collection2.UpdateOne(ctx, filter, update)
-			fmt.Println(updated)
-
 			defer cancel()
 
 			if dberr != nil {
@@ -281,8 +277,8 @@ func DeleteAProduct(w http.ResponseWriter, r *http.Request) {
 	Token := r.Header.Get("Authorization")
 	email, _ := VerifyToken(Token)
 	if email == "" {
-		errorResponse.Code = http.StatusUnauthorized
-		errorResponse.Message = "Do not have authorization"
+		errorResponse.Code = http.StatusNotFound
+		errorResponse.Message = "Please login first"
 		returnErrorResponse(w, r, errorResponse)
 		return
 	} else {
@@ -306,7 +302,7 @@ func DeleteAProduct(w http.ResponseWriter, r *http.Request) {
 				returnErrorResponse(w, r, errorResponse)
 				return
 			}
-			filter := bson.M{"_id": id, "email": email}
+			filter := bson.M{"_id": id, "userId": result.ID}
 
 			deleted, dberr := database.Collection2.DeleteOne(ctx, filter)
 
